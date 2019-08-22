@@ -28,7 +28,7 @@ class AES_SHA implements iCryptoSystem
 		$atime = time();
 		$tid = $this->getTID();
 
-		$encData = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->symmetricKey, $data, MCRYPT_MODE_CBC, $iv);
+		$encData = openssl_encrypt($data, 'AES-256-CBC', $this->symmetricKey, OPENSSL_RAW_DATA, $iv);
 
 		$hmac = $this->getHMAC($encData, $atime, $expiration, $tid, $iv);
 
@@ -50,7 +50,7 @@ class AES_SHA implements iCryptoSystem
 		if ($expiration > 0 && $atime + $expiration < time())
 			throw new InputExpiredException('The expiration time on the data has been reached.');
 
-		$data = trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->symmetricKey, $encData, MCRYPT_MODE_CBC, $iv), chr(0));
+		$data = trim(openssl_decrypt($encData, 'AES-256-CBC', $this->symmetricKey, OPENSSL_RAW_DATA | OPENSSL_NO_PADDING, $iv), chr(0));
 
 		return $data;
 	}

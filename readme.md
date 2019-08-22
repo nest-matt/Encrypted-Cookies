@@ -1,7 +1,7 @@
 Encrypted Cookie
 ================
 
-![Build Status](https://circleci.com/gh/Rosio/Encrypted-Cookies.png?circle-token=5161d88db7a6be025de635195d1a7ac6a430787c)
+Based off of Rasio\EncryptedCookie but updated to use OpenSSL CryptoSystem for php7+ support
 
 Library provides basic functionality to easily create and manage encrypted cookies.
 
@@ -18,9 +18,9 @@ Quick Example
 -------------
 
 ```php
-use Rosio\EncryptedCookie\CookieStorage;
-use Rosio\EncryptedCookie\Cookie;
-use Rosio\EncryptedCookie\CryptoSystem\AES_SHA;
+use MattNest\EncryptedCookie\CookieStorage;
+use MattNest\EncryptedCookie\Cookie;
+use MattNest\EncryptedCookie\CryptoSystem\AES_SHA;
 
 // Used to create cookies with a given cryptoSystem
 $storage = new CookieStorage(new AES_SHA('32charactercryptokeymustbe32chrs', 'HMACKey'));
