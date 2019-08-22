@@ -1,7 +1,11 @@
 {
     "name": "nest-matt/encrypted-cookie",
-    "description": "Allows easy management of encrypted cookies",
+    "description": "Allows easy management of encrypted cookies, updated for php7+ by removing mcrypt",
     "authors": [
+        {
+            "name": "Ben",
+            "email": "ben@ros.io"
+        },
         {
             "name": "Matt Kardos",
             "email": "matt.kardos@nest.net.nz"
@@ -11,7 +15,7 @@
 
     "autoload": {
         "psr-4": {
-            "Nest-Matt\\EncryptedCookie\\": "src/"
+            "Rosio\\EncryptedCookie\\": "src/"
         }
     },
 

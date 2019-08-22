@@ -18,9 +18,9 @@ Quick Example
 -------------
 
 ```php
-use MattNest\EncryptedCookie\CookieStorage;
-use MattNest\EncryptedCookie\Cookie;
-use MattNest\EncryptedCookie\CryptoSystem\AES_SHA;
+use Rosio\EncryptedCookie\CookieStorage;
+use Rosio\EncryptedCookie\Cookie;
+use Rosio\EncryptedCookie\CryptoSystem\AES_SHA;
 
 // Used to create cookies with a given cryptoSystem
 $storage = new CookieStorage(new AES_SHA('32charactercryptokeymustbe32chrs', 'HMACKey'));
